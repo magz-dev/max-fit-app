@@ -1,48 +1,59 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: antiquewhite;
+}
+
 /* BACKGROUND */
-body { 
+.welcome-page { 
 
-    height: 100vh; 
-    
-    background: url('/media/gym.jpeg') no-repeat center center fixed transparent; 
-    background-size: cover; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    position: relative;
- } 
+   height: 100vh; 
+   
+   background: url('/media/gym.jpeg') no-repeat center center fixed transparent; 
+   -webkit-background-size: cover; 
+   -moz-background-size: cover; 
+   -o-background-size: cover; 
+   background-size: cover; 
+   display: flex; 
+   align-items: center; 
+   justify-content: center; 
+   position: relative;
+} 
 
-
- /*FOOTER*/
+/*FOOTER*/
 .footer-style {
-    background-color: #ffffff;
+   background-color: #ffffff;
 }
 
 
 .ft-style {
-    background-color: rgb(122, 120, 114);
+   background-color: rgb(122, 120, 114);
 }
 
 /* TEXT COLOUR*/
 h3 { 
-    color: rgb(247, 121, 23);
+   color: rgb(247, 121, 23);
 }
 
- p, h6, h5, li { 
-    color: rgb(58, 49, 49);
+p, h6, h5, li { 
+   color: rgb(58, 49, 49);
 }
- 
+
 
 h1 {
-    color: rgb(78, 208, 38);
+color: black;
+text-transform: uppercase;
+text-align: left;
+ 
 }
 
 
 
 /* TEXT POSITION*/
 .style { 
-    margin-top: 15px;
-    margin-bottom: 10px;
+   margin-top: 15px;
+   margin-bottom: 10px;
 }
 
-
-
+.text {
+   justify-content: left;
+}
