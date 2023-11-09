@@ -14,7 +14,7 @@ body {
    -o-background-size: cover; 
    background-size: cover; 
    display: flex; 
-   align-items: center; 
+   align-items: centre; 
    justify-content: center; 
    position: relative;
 } 
@@ -42,11 +42,8 @@ p, h6, h5, li {
 h1 {
 color: black;
 text-transform: uppercase;
-text-align: left;
- 
+text-align: center; 
 }
-
-
 
 /* TEXT POSITION*/
 .style { 
@@ -57,3 +54,25 @@ text-align: left;
 .text {
    justify-content: left;
 }
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+   .container {
+     max-width: 80%;
+   }
+ }
+ 
+ /* fixed top navbar only on medium and up */
+ @media (min-width: 992px) {
+   .fixed-top-desktop-only {
+         position: fixed;
+         top: 0;
+         right: 0;
+         left: 0;
+         z-index: 1030;
+     }
+ 
+     .header-container {
+         padding-top: 164px;
+     }
+ }
