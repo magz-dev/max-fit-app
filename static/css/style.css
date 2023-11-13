@@ -64,6 +64,11 @@ text-align: center;
 	z-index: -1;
 }
 
+a.category-badge > span.badge:hover {
+   background: #212529 !important;
+   color: #fff !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -87,3 +92,4 @@ text-align: center;
          padding-top: 164px;
      }
  }
+
