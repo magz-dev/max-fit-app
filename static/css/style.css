@@ -1,23 +1,23 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: antiquewhite;
+   font-family: 'Poppins', sans-serif;
+   background-color: antiquewhite;
 }
 
 /* BACKGROUND */
-.welcome-page { 
+.welcome-page {
 
-   height: 100vh; 
-   
-   background: url('/media/gym.jpeg') no-repeat center center fixed transparent; 
-   -webkit-background-size: cover; 
-   -moz-background-size: cover; 
-   -o-background-size: cover; 
-   background-size: cover; 
-   display: flex; 
-   align-items: centre; 
-   justify-content: center; 
+   height: 100vh;
+
+   background: url('/media/gym.jpeg') no-repeat center center fixed transparent;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   display: flex;
+   align-items: centre;
+   justify-content: center;
    position: relative;
-} 
+}
 
 /*FOOTER*/
 .footer-style {
@@ -30,23 +30,26 @@ body {
 }
 
 /* TEXT COLOUR*/
-h3 { 
+h3 {
    color: rgb(247, 121, 23);
 }
 
-p, h6, h5, li { 
+p,
+h6,
+h5,
+li {
    color: rgb(58, 49, 49);
 }
 
 
 h1 {
-color: black;
-text-transform: uppercase;
-text-align: center; 
+   color: black;
+   text-transform: uppercase;
+   text-align: center;
 }
 
 /* TEXT POSITION*/
-.style { 
+.style {
    margin-top: 15px;
    margin-bottom: 10px;
 }
@@ -54,17 +57,18 @@ text-align: center;
 .text {
    justify-content: left;
 }
+
 .overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   background: white;
+   z-index: -1;
 }
 
-a.category-badge > span.badge:hover {
+a.category-badge>span.badge:hover {
    background: #212529 !important;
    color: #fff !important;
 }
@@ -86,22 +90,21 @@ a.category-badge > span.badge:hover {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
    .container {
-     max-width: 80%;
+      max-width: 80%;
    }
- }
- 
- /* fixed top navbar only on medium and up */
- @media (min-width: 992px) {
-   .fixed-top-desktop-only {
-         position: fixed;
-         top: 0;
-         right: 0;
-         left: 0;
-         z-index: 1030;
-     }
- 
-     .header-container {
-         padding-top: 164px;
-     }
- }
+}
 
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+   .fixed-top-desktop-only {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+   }
+
+   .header-container {
+      padding-top: 164px;
+   }
+}
