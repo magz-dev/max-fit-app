@@ -1,6 +1,8 @@
 from decimal import Decimal
 from django.conf import settings
 
+# shopping bag contents and delivery logic
+
 def bag_contents(request):
 
     bag_items = []
