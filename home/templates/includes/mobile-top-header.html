@@ -1,4 +1,7 @@
 <ul>
+
+    <!-- Mobile search bar -->
+
     <li class="list-inline-item">
         <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -7,6 +10,7 @@
                 <p class="my-0">Search</p>
             </div>
         </a>
+
         <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
             <form class="form" method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
@@ -32,6 +36,9 @@
                 <p class="my-0">My Account</p>
             </div>
         </a>
+
+        <!-- User authentication check -->
+
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
@@ -45,6 +52,9 @@
             {% endif %}
         </div>
     </li>
+
+    <!-- Mobile shopping bag -->
+
     <li class="list-inline-item">
         <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
             href="{% url 'view_bag' %}">

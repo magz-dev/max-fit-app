@@ -7,7 +7,7 @@
 
     {% block meta %}
 
-    <!-- meta tags --> 
+   <!-- Meta tags -->
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
 
     {% block corecss %}
 
-    <!-- stylesheets -->
+    <!-- Stylesheets -->
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -35,7 +35,7 @@
 
     {% block corejs %}
 
-    <!-- JS tags -->
+      <!-- JavaScript tags -->
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -56,12 +56,18 @@
 
 <body>
     <header class="container-fluid fixed-top">
+
+         <!-- Top navigation -->
+
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0"><strong>MaX</strong> Fitness</h2>
                 </a>
             </div>
+
+             <!-- Search form -->
+
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -77,6 +83,9 @@
                     </div>
                 </form>
             </div>
+
+            <!-- User account info -->
+
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
@@ -89,7 +98,7 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
 
-                            <!-- checks if the user is authenticated --> 
+                             <!-- User authentication check -->
 
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
@@ -103,6 +112,9 @@
                             {% endif %}
                         </div>
                     </li>
+
+                    <!-- Shopping bag -->
+
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
@@ -110,7 +122,7 @@
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
 
-                                    <!-- checks whether 'grand total' exists -->
+                                    <!-- Grand total check -->
 
                                     {% if grand_total %}
                                     £{{ grand_total|floatformat:2 }}
@@ -125,6 +137,9 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
         </div>
+
+        <!-- Navigation bar -->
+
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
@@ -135,6 +150,9 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+
+          <!-- Delivery banner -->
+
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
