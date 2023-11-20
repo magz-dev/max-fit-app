@@ -31,7 +31,6 @@
                 <a href="{% url 'products' %}?category=women_tops" class="dropdown-item">Tops</a>
                 <a href="{% url 'products' %}?category=women_accesories" class="dropdown-item">Accesories</a>
                 <a href="{% url 'products' %}?category=women_essentials" class="dropdown-item">Gym Essentials</a>
-                <a href="{% url 'products' %}?category=women_equipment" class="dropdown-item">Equipment</a>
                 <a href="{% url 'products' %}?category=women_new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=women_clearance" class="dropdown-item">Clearance</a>
                 <a href="{% url 'products' %}?category=category=women_clearance,women_new_arrivals,women_footwear,women_tops,women_accesories,women_essentials"
@@ -52,23 +51,27 @@
                 <a href="{% url 'products' %}?category=men_tops" class="dropdown-item">Tops</a>
                 <a href="{% url 'products' %}?category=men_accesories" class="dropdown-item">Accesories</a>
                 <a href="{% url 'products' %}?category=men_essentials" class="dropdown-item">Essentials</a>
-                <a href="{% url 'products' %}?category=men_equipment" class="dropdown-item">Equipment</a>
                 <a href="{% url 'products' %}?category=men_new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=men_clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=men_clearance,men_new_arrivals,men_footwear,men_tops,men_accesories,men_essentials,men_equipment"
+                <a href="{% url 'products' %}?category=men_clearance,men_new_arrivals,men_footwear,men_tops,men_accesories,men_essentials"
                     class="dropdown-item">All
                     Clothing</a>
             </div>
         </li>
 
-        <!-- ALL SPECIALS -->
+        <!-- Dropdown menu for ALL SPECIALS -->
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?category=men_clearance, men_new_arrivals, men_new_arrivals, women_clearance" id="specials-link">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="men-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 ALL SPECIALS
             </a>
-               
-</div>
+            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
+                <a href="{% url 'products' %}?category=men_clearance,women_clearance" class="dropdown-item">All Clearance</a>
+                <a href="{% url 'products' %}?category=men_new_arrivals,women_new_arrivals" class="dropdown-item">All New Arrivals</a>
+                <a href="{% url 'products' %}?category=men_clearance,men_new_arrivals,women_clearance,women_new_arrivals" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
 </div>
 </li>
 </ul>
