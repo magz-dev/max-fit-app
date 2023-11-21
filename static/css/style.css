@@ -19,15 +19,6 @@ body {
    position: relative;
 }
 
-/*FOOTER*/
-.footer-style {
-   background-color: #ffffff;
-}
-
-
-.ft-style {
-   background-color: rgb(122, 120, 114);
-}
 
 /* TEXT COLOUR*/
 h3 {
@@ -41,6 +32,10 @@ li {
    color: rgb(58, 49, 49);
 }
 
+h2 {
+   text-transform:uppercase;
+   font-weight: bold;
+}
 
 h1 {
    color: black;
@@ -66,6 +61,12 @@ h1 {
    position: fixed;
    background: white;
    z-index: -1;
+}
+
+.logo-font {
+   /* Style for the title */
+   display: inline-block;
+   margin-left: 10px;
 }
 
 a.category-badge>span.badge:hover {
