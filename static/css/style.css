@@ -34,7 +34,6 @@ li {
 
 h2 {
    text-transform:uppercase;
-   font-weight: bold;
 }
 
 h1 {
@@ -69,6 +68,11 @@ h1 {
    margin-left: 10px;
 }
 
+.logo-img {
+   /* Style for the logo image */
+   max-width: 80px; 
+}
+
 a.category-badge>span.badge:hover {
    background: #212529 !important;
    color: #fff !important;
@@ -84,6 +88,23 @@ a.category-badge>span.badge:hover {
 
 .btt-link .update-link .remove-item {
    cursor: pointer;
+}
+
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+   position: fixed;
+   top: 72px;
+   right: 15px;
+   z-index: 99999999999;
+}
+
+.custom-toast {
+   overflow: visible;
+}
+
+.toast-capper {
+   height: 2px;
 }
 
 .btn-outline-black {
