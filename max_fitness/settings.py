@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d25414ap#6rr*&^s#nwjx-7v6_$uta_0^amn@(-ro@q(zm9ic1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-magzdev-maxfitapp-1ta67zlmyto.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['8000-magzdev-sportstylehub-dfeleqfmctl.ws-eu106.gitpod.io']
 
 
 # Application definition
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+     # Other
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +62,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'max_fitness.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -72,8 +77,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
