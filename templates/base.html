@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
     {% block meta %}
 
     <!-- Meta tags -->
@@ -26,15 +25,12 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}">
-
-
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-
     <!-- JavaScript tags -->
     <script src="https://kit.fontawesome.com/97ea5732ee.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -46,6 +42,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -209,4 +207,5 @@
     {% endblock %}
 
 </body>
+
 </html>
