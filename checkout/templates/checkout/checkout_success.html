@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
+<!-- Include additional CSS for the checkout page -->
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -19,8 +20,10 @@
     <div class="row">
         <div class="col">
             <hr>
+            <!-- Heading for order confirmation page -->
             <h2 class="logo-font mb-4">Thank You</h2>
             <hr>
+            <!-- Display confirmation message with customer's email -->
             <p class="text-black">Your order information is below. A confirmation email will be sent to
                 <strong>{{ order.email }}</strong>.</p>
         </div>
@@ -28,13 +31,16 @@
 
     <div class="row">
         <div class="col-12 col-lg-7">
+            <!-- Wrapper for order confirmation details -->
             <div class="order-confirmation-wrapper p-2 border">
                 <div class="row">
                     <div class="col">
+                        <!-- Section for displaying general order information -->
                         <small class="text-muted">Order Info:</small>
                     </div>
                 </div>
 
+                <!-- Display order number and order date -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Order Number</p>
@@ -55,10 +61,12 @@
 
                 <div class="row">
                     <div class="col">
+                        <!-- Section for displaying order details -->
                         <small class="text-muted">Order Details:</small>
                     </div>
                 </div>
 
+                <!-- Loop through order line items and display details -->
                 {% for item in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -75,10 +83,12 @@
 
                 <div class="row">
                     <div class="col">
+                        <!-- Section for delivering information -->
                         <small class="text-muted">Delivering To:</small>
                     </div>
                 </div>
 
+                <!-- Display delivery address details -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Full Name</p>
@@ -97,6 +107,7 @@
                     </div>
                 </div>
 
+                <!-- Display Address 2 if available -->
                 {% if order.street_address2 %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -108,6 +119,7 @@
                 </div>
                 {% endif %}
 
+                <!-- Display County if available -->
                 {% if order.county %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -119,6 +131,7 @@
                 </div>
                 {% endif %}
 
+                <!-- Display Town or City -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Town or City</p>
@@ -128,6 +141,7 @@
                     </div>
                 </div>
 
+                <!-- Display Postal Code if available -->
                 {% if order.postcode %}
                 <div class="row">
                     <div class="col-12 col-md-4">
@@ -139,6 +153,7 @@
                 </div>
                 {% endif %}
 
+                <!-- Display Country -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Country</p>
@@ -148,6 +163,7 @@
                     </div>
                 </div>
 
+                <!-- Display Phone Number -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Phone Number</p>
@@ -159,10 +175,12 @@
 
                 <div class="row">
                     <div class="col">
+                        <!-- Section for displaying billing information -->
                         <small class="text-muted">Billing Info:</small>
                     </div>
                 </div>
 
+                <!-- Display Order Total, Delivery Cost, and Grand Total -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Order Total</p>
@@ -194,6 +212,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
+            <!-- Link to view the latest deals -->
             <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
                 <span class="icon mr-2">
                     <i class="fas fa-gifts"></i>

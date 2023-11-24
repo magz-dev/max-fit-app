@@ -3,6 +3,7 @@
 {% load bag_tools %}
 
 {% block extra_css %}
+<!-- Include additional CSS for the checkout page -->
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -15,6 +16,7 @@
 {% endblock %}
 
 {% block content %}
+<!-- Overlay for loading spinner -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
@@ -25,6 +27,7 @@
         </div>
     </div>
 
+    <!-- Order Summary section -->
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -37,9 +40,11 @@
                 </div>
             </div>
             {% for item in bag_items %}
+            <!-- Display individual items in the bag -->
             <div class="row">
                 <div class="col-2 mb-1">
                     <a href="{% url 'product_detail' item.product.id %}">
+                        <!-- Display product image with a link to its detail page -->
                         {% if item.product.image %}
                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
@@ -48,17 +53,20 @@
                     </a>
                 </div>
                 <div class="col-7">
+                    <!-- Display product details -->
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="my-0 small">Size:
                         {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
+                    <!-- Display item subtotal -->
                     <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
             <hr class="my-0">
+            <!-- Display order total, delivery cost, and grand total -->
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
                     <p class="my-0">Order Total:</p>
@@ -72,24 +80,28 @@
                 </div>
             </div>
         </div>
+        <!-- Order Details and Payment Form Section -->
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
+                <!-- Customer details section -->
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
+                <!-- Delivery details section -->
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
                     {{ order_form.phone_number | as_crispy_field }}
-                    {{ order_form.country | as_crispy_field }}
-                    {{ order_form.postcode | as_crispy_field }}
-                    {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <!-- Checkbox to save delivery information to user profile -->
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
@@ -104,17 +116,18 @@
                         {% endif %}
                     </div>
                 </fieldset>
+                <!-- Payment details section -->
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
-
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
+                <!-- Form submission buttons -->
                 <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
                         <span class="icon">
@@ -139,6 +152,7 @@
         </div>
     </div>
 </div>
+<!-- Loading spinner overlay -->
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">
@@ -149,6 +163,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+<!-- Include necessary JavaScript files and scripts -->
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}

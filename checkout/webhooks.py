@@ -1,17 +1,22 @@
+# Import necessary modules and classes from Django
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
+# Import the webhook handler class
 from checkout.webhook_handler import StripeWH_Handler
 
+# Import the Stripe library
 import stripe
 
+# Define a view to listen for webhooks from Stripe
 @require_POST
 @csrf_exempt
 def webhook(request):
     """Listen for webhooks from Stripe"""
-    # Setup
+    
+    # Retrieve the Stripe webhook secret and set the API key
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -22,7 +27,7 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret
+            payload, sig_header, wh_secret
         )
     except ValueError as e:
         # Invalid payload
@@ -31,6 +36,7 @@ def webhook(request):
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
+        # Other exceptions
         return HttpResponse(content=e, status=400)
 
     # Set up a webhook handler

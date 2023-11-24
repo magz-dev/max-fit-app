@@ -23,28 +23,28 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
-            'county': 'County',
-        }
+            'county': 'County, State or Locality',    
+            }
 
         # Set autofocus on the first field
         self.fields['full_name'].widget.attrs['autofocus'] = True
 
         # Loop through form fields to set placeholders and classes
         for field in self.fields:
-
+            # Exclude 'country' field from the loop
+            if field != 'country':
             # Add '*' to the placeholder if the field is required
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
 
-            # Set placeholder attribute
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+                # Set placeholder attribute
+                self.fields[field].widget.attrs['placeholder'] = placeholder
 
             # Add a custom class to the form field for styling
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
