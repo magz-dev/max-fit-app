@@ -173,6 +173,7 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51OFfLbIgz7mgrzCgkTEHXHHFb2tSqnHmhDG3tcrHf2NJpF5sbgfYGjjMpxdsukLFxLOyyZI7h0IIj1AWKz7HNGfn00S66WgfBJ')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51OFfLbIgz7mgrzCghQdnRuH8CN39uJXcFzdZCEZjKkUEjkHtmDQOCEZEoVI9bj1zBSvdvNoBD1q3Wt4HjrFKvpd700pSN39Slc')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+DEFAULT_FROM_EMAIL = 'sportstylehub@example.com'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
