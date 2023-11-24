@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block extra_css %}
-<!-- Include additional CSS for the checkout page -->
+<!-- Include a custom CSS file for styling specific to the checkout page -->
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
+<!-- Define the page header with a container and row (empty in this case) -->
 <div class="container header-container">
     <div class="row">
         <div class="col"></div>
@@ -15,15 +16,16 @@
 {% endblock %}
 
 {% block content %}
+<!-- Add an overlay div for styling purposes -->
 <div class="overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col">
             <hr>
-            <!-- Heading for order confirmation page -->
+            <!-- Display the page title using a custom font and horizontal rule -->
             <h2 class="logo-font mb-4">Thank You</h2>
             <hr>
-            <!-- Display confirmation message with customer's email -->
+            <!-- Display a thank you message with the customer's email -->
             <p class="text-black">Your order information is below. A confirmation email will be sent to
                 <strong>{{ order.email }}</strong>.</p>
         </div>
@@ -31,16 +33,15 @@
 
     <div class="row">
         <div class="col-12 col-lg-7">
-            <!-- Wrapper for order confirmation details -->
+            <!-- Display order confirmation details in a wrapper with a border -->
             <div class="order-confirmation-wrapper p-2 border">
                 <div class="row">
                     <div class="col">
-                        <!-- Section for displaying general order information -->
                         <small class="text-muted">Order Info:</small>
                     </div>
                 </div>
 
-                <!-- Display order number and order date -->
+                <!-- Display order number and date -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Order Number</p>
@@ -59,20 +60,19 @@
                     </div>
                 </div>
 
+                <!-- Display order details for each line item -->
                 <div class="row">
                     <div class="col">
-                        <!-- Section for displaying order details -->
                         <small class="text-muted">Order Details:</small>
                     </div>
                 </div>
 
-                <!-- Loop through order line items and display details -->
                 {% for item in order.lineitems.all %}
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="small mb-0 text-black font-weight-bold">
                             {{ item.product.name }}{% if item.product_size %} - Size
-                            {{ item.product_size|upper }}{% endif %}
+                            {{ item.product.size|upper }}{% endif %}
                         </p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
@@ -81,14 +81,13 @@
                 </div>
                 {% endfor %}
 
+                <!-- Display delivery address details -->
                 <div class="row">
                     <div class="col">
-                        <!-- Section for delivering information -->
                         <small class="text-muted">Delivering To:</small>
                     </div>
                 </div>
 
-                <!-- Display delivery address details -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Full Name</p>
@@ -114,7 +113,7 @@
                         <p class="mb-0 text-black font-weight-bold">Address 2</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-right">
-                        <p class="mb-0">{{ order.street_address1 }}</p>
+                        <p class="mb-0">{{ order.street_address2 }}</p>
                     </div>
                 </div>
                 {% endif %}
@@ -173,14 +172,13 @@
                     </div>
                 </div>
 
+                <!-- Display Billing Information -->
                 <div class="row">
                     <div class="col">
-                        <!-- Section for displaying billing information -->
                         <small class="text-muted">Billing Info:</small>
                     </div>
                 </div>
 
-                <!-- Display Order Total, Delivery Cost, and Grand Total -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black font-weight-bold">Order Total</p>
@@ -210,15 +208,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Display navigation buttons based on the origin of the order -->
     <div class="row">
         <div class="col-12 col-lg-7 text-right">
-            <!-- Link to view the latest deals -->
+            {% if from_profile %}
+            <!-- Display a button to navigate back to the user's profile if 'from_profile' is true -->
+            <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
+            {% else %}
+            <!-- Display a button to navigate to the 'products' page with specific categories if 'from_profile' is false -->
             <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
                 <span class="icon mr-2">
                     <i class="fas fa-gifts"></i>
                 </span>
                 <span class="text-uppercase">Now check out the latest deals!</span>
             </a>
+            {% endif %}
         </div>
     </div>
 </div>
