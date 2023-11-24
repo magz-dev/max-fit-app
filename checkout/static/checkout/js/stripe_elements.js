@@ -37,6 +37,7 @@ const cardElement = elements.create('card', {
 // Mount the card element to the div with id 'card-element'
 cardElement.mount('#card-element');
 
+
 // Handle realtime validation errors on the card element
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('card-errors');
