@@ -1,5 +1,6 @@
 # Import necessary modules from Django
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 # Create a form for handling Product model data
@@ -9,7 +10,8 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
-
+    
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
     # Constructor to initialize the form with additional customizations
     def __init__(self, *args, **kwargs):
         # Call the parent class constructor
