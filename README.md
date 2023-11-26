@@ -47,13 +47,16 @@ We have been using the sqlite3 database in development, however this is only ava
 
 #### Preparation for deployment in GitPod
 1. Install dj_database_url and psycopg2 (they are both needed for connecting to the external database you've just set up):
+   
 ```
 pip3 install dj_database_url==0.5.0 psycopg2
 ```
 2. Update your requirements.txt file with the packages just installed:
+   
 ```
 pip3 freeze > requirements.txt
 ```
+
 3. In settings.py underneath import os, add `import dj_database_url`
 4. Find the section for DATABASES and comment out the code. Add the following code below the commented out database block, and use the URL copied from elephantSQL for the value:
    
@@ -62,19 +65,24 @@ pip3 freeze > requirements.txt
 DATABASES = {
     'default': dj_database_url.parse('paste-elephantsql-db-url-here')
 }
+
 ```
 5. In the terminal, run the show migrations command to confirm connection to the external database:
+   
 ```
 python3 manage.py runserver
 ```
+
 6. If you have connected the database correctly you will see a list of migrations that are unchecked. You can now run migrations to migrate the models to the new database:
 ```
 python3 manage.py migrate
 ```
+
 7. Create a superuser for the new database. Input a username, email and password when directed.
 ```
 python3 manage.py createsuperuser
 ```
+
 8. You should now be able to go to the browser tab on the left of the page in elephantsql, click the table queries button and see the user you've just created by selecting the auth_user table.
 9. We can now add an if/else statement for the databases in settings.py, so we use the development database while in development (the code we commented out) - and the external database on the live site (note the change where the db URL was is now a variable we will use in Heroku):
 ```
@@ -89,28 +97,35 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
       }
     }
+```
+
 10. Install gunicorn which will act as our webserver and freeze this to the requirements.txt file:
 ```
 pip3 install gunicorn
 pip3 freeze > requirements.txt
 ```
+
 11. Create a Procfile in the root directory. This tells Heroku to create a web dyno which runs gunicorn and serves our django app. Add the following to the file (making sure not to leave any blank lines underneath):
 ```
 web: gunicorn seaside_sewing.wsgi:application
 ```
+
 12. Log into the Heroku CLI in the terminal and then run the following command to disable collectstatic. This command tells Heroku not to collect static files when we deploy:
 ```
 heroku config:set DISABLE_COLLECTSTATIC=1 --app heroku-app-name-here
 ```
+
 13. We will also need to add the Heroku app and localhost (which will allow GitPod to still work) to ALLOWED_HOSTS = [] in settings.py:
 ```
 ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
 ```
+
 14. Save, add, commit and push the changes to GitHub. You can then also initialize the Heroku git remote in the terminal and push to Heroku with:
 ```
 heroku git:remote -a {app name here}
 git push heroku master
 ```
+
 15. You should now be able to see the deployed site (without any static files as we haven't set these up yet).
 16. To enable automatic deploys on Heroku, go to the deploy tab and click the connect to GitHub button in the deployment method section. Search for the projects repository and then click connect. Click enable automatic deploys at the bottom of the page.
 
@@ -124,22 +139,13 @@ git push heroku master
 ```
 SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
 ```
+
 5. We can now adjust the `DEBUG` variable to only set DEBUG as true if in development:
 ```
 DEBUG = 'DEVELOPMENT' in os.environ
 ```
+
 6. Save, add, commit and push these changes.
-
-
-
-
-
-
-
-
-
-
-
 
 ## Credits
 
