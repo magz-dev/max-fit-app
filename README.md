@@ -14,7 +14,6 @@
 * Python
 
 ### Media
-* The background photo was taken from a non-copyrighted google image search.
 * Favicon, logo and delivery icon is from [Icons8](https://icons8.com/).
 * Background photo is from [Adobe Stock](https://stock.adobe.com/uk/)
 
@@ -25,7 +24,7 @@
 * Bootstrap 4 - Bootstrap Library used throughout the project to add style. Bootstrap 4 was also used to make the site responsive by using the Bootstrap Grid System.
 * Code Institute's learning content.
 * [W3Schools](https://www.w3schools.com/default.asp)
-* [Javascript tutorial- initalising toasts ](https://www.youtube.com/watch?v=fbXHOVp_L_4)
+* [Javascript tutorial](https://www.youtube.com/watch?v=fbXHOVp_L_4)
 
   
 ### Acknowledgements
