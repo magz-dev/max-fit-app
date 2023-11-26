@@ -1,19 +1,16 @@
-// Retrieve the elements by their IDs
-const publicKeyElement = document.getElementById('id_stripe_public_key');
-const secretElement = document.getElementById('id_client_secret');
+/*
+    Core logic/payment flow for this comes from here:
+    https://stripe.com/docs/payments/accept-a-payment
 
-// Extract the content without the first and last characters
-const stripePublicKey = publicKeyElement.textContent.slice(1, -1);
-const clientSecret = secretElement.textContent.slice(1, -1);
+    CSS from here: 
+    https://stripe.com/docs/stripe-js
+*/
 
-// Create a stripe instance using the public key
-const stripe = Stripe(stripePublicKey);
-
-// Create an elements instance
-const elements = stripe.elements();
-
-// Define style for the card element
-const cardStyle = {
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var stripe = Stripe(stripePublicKey);
+var elements = stripe.elements();
+var style = {
     base: {
         color: '#000',
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
@@ -28,15 +25,10 @@ const cardStyle = {
         iconColor: '#dc3545'
     }
 };
-
-// Create a card element with the specified style
-const cardElement = elements.create('card', {
-    style: cardStyle
+var card = elements.create('card', {
+    style: style
 });
-
-// Mount the card element to the div with id 'card-element'
-cardElement.mount('#card-element');
-
+card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
 card.addEventListener('change', function (event) {

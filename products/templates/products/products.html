@@ -3,7 +3,7 @@
 
 {% block page_header %}
 
-<!-- Page header block -->
+<!-- Extends the base.html template and loads static files -->
 
 <div class="container header-container">
     <div class="row">
@@ -14,16 +14,16 @@
 
 {% block content %}
 
-<!-- Content block -->
+<!-- Main Content block -->
 
 <div class="overlay"></div>
-<div class="container-fluid">
+<div class="container-fluid gap">
     <div class="row">
 
-        <!-- Title and categories section -->
-
+        <!-- Categories and sorting options -->
         <div class="col text-center mt-3">
             <h2 class="logo-font">Products</h2>
+            <br>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                 <span
@@ -35,8 +35,7 @@
     </div>
     <div class="row">
 
-        <!-- Sort selector section -->
-
+        <!-- Product sorting dropdown -->
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2">
                 <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
@@ -65,7 +64,7 @@
                     </div>
                 </div>
 
-                <!-- Product count and navigation -->
+                <!-- Product count and information -->
 
                 <div class="col-12 col-md-6 order-md-first">
                     <p class="text-muted mt-3 text-center text-md-left">
@@ -78,13 +77,12 @@
                 </div>
             </div>
 
-            <!-- Product card section -->
-
-
+            <!-- Product cards section -->
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
+                         <!-- Product image -->
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -97,7 +95,6 @@
                         {% endif %}
 
                         <!-- Product details -->
-
                         <div class="card-body pb-0">
                             <p class="mb-0">{{ product.name }}</p>
                         </div>
@@ -157,47 +154,11 @@
 </div>
 
 <!-- Back to top button -->
-
-<div class="btt-button shadow-sm rounded-0 border border-black">
-    <a class="btt-link d-flex h-100">
-        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>
-</div>
-{% endblock %}
-{% block postloadjs %}
-
-<!-- Additional JavaScript -->
-
-{{ block.super }}
-<script type="text/javascript">
-    // Back to top button
-
-    document.querySelector('.btt-link').addEventListener('click', function (e) {
-        window.scrollTo(0, 0);
-    });
+document.querySelector('.btt-link').addEventListener('click', function (e) {
+window.scrollTo(0, 0);
+});
 </script>
 
-<script type="text/javascript">
-    // Sort selector
+<script type="text/javascript" src="{% static 'products/js/products.js' %}"></script>
 
-    const selectedValue = selector.value;
-    document.getElementById('sort-selector').addEventListener('change', function () {
-        const selector = this;
-        const currentURL = new URL(window.location);
-
-        if (selectedValue !== "reset") {
-            const sort = selectedVal.split("_")[0];
-            const direction = selectedValue.split("_")[1];
-
-            currentUrl.searchParams.set("sort", sort);
-            currentUrl.searchParams.set("direction", direction);
-            window.location.replace(currentUrl);
-        } else {
-            currentUrl.searchParams.delete("sort");
-            currentUrl.searchParams.delete("direction");
-
-            window.location.replace(currentUrl);
-        }
-    });
-</script>
 {% endblock %}

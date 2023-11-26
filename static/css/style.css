@@ -1,6 +1,7 @@
 body {
-   font-family: 'Poppins', sans-serif;
-   background-color: antiquewhite;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
 }
 
 /* BACKGROUND */
@@ -21,9 +22,6 @@ body {
 
 
 /* TEXT COLOUR*/
-h3 {
-   color: rgb(247, 121, 23);
-}
 
 p,
 h6,
@@ -43,6 +41,12 @@ h1 {
 }
 
 /* TEXT POSITION*/
+
+.gap {
+   margin-top: 35px;
+
+}
+
 .style {
    margin-top: 15px;
    margin-bottom: 10px;

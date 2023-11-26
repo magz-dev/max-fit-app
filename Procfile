@@ -1,0 +1,1 @@
+web: gunicorn max_fitness.wsgi:application

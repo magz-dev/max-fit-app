@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block page_header %}
-<!-- Define the page header with a container and row (empty in this case) -->
+<!-- Define the page header with a container and row  -->
 <div class="container header-container">
     <div class="row">
         <div class="col"></div>
@@ -18,7 +18,7 @@
 {% block content %}
 <!-- Add an overlay div for styling purposes -->
 <div class="overlay"></div>
-<div class="container">
+<div class="container gap">
     <div class="row">
         <div class="col">
             <hr>
@@ -73,7 +73,7 @@
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>${{ order.grand_total }}</td>
+                            <td>£{{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
