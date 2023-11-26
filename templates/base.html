@@ -1,8 +1,6 @@
 {% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% block meta %}
     <!-- Meta tags -->
@@ -10,10 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
-
     {% block extra_meta %}
     {% endblock %}
-
     {% block corecss %}
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -22,10 +18,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}">
     {% endblock %}
-
     {% block extra_css %}
     {% endblock %}
-
     {% block corejs %}
     <!-- JavaScript tags -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -40,13 +34,10 @@
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
-
     {% block extra_js %}
     {% endblock %}
-
     <title>Sport Style Hub {% block extra_title %}{% endblock %}</title>
 </head>
-
 <body>
     <header class="container-fluid fixed-top">
 
@@ -193,5 +184,4 @@
     {% endblock %}
 
 </body>
-
 </html>
