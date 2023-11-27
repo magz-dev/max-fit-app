@@ -154,8 +154,9 @@
 </div>
 
 <!-- Back to top button -->
+{% block postloadjs %}
+    {{ block.super }}
 <script type="text/javascript">
-
 document.querySelector('.btt-link').addEventListener('click', function (e) {
 window.scrollTo(0, 0);
 });
