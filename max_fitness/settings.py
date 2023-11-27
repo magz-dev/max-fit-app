@@ -15,7 +15,7 @@ import dj_database_url
 from pathlib import Path
 if os.path.isfile("env.py"):
     import env
-    
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d25414ap#6rr*&^s#nwjx-7v6_$uta_0^amn@(-ro@q(zm9ic1'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['sportstylehub-73c15c72aa03.herokuapp.com', '8000-magzdev-sportstylehub-u80esv7qb0e.ws-eu106.gitpod.io']
 
@@ -203,8 +203,8 @@ if 'USE_AWS' in os.environ:
 FREE_DELIVERY_THRESHOLD = 60
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', 'pk_test_51OFfLbIgz7mgrzCgkTEHXHHFb2tSqnHmhDG3tcrHf2NJpF5sbgfYGjjMpxdsukLFxLOyyZI7h0IIj1AWKz7HNGfn00S66WgfBJ')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', 'sk_test_51OFfLbIgz7mgrzCghQdnRuH8CN39uJXcFzdZCEZjKkUEjkHtmDQOCEZEoVI9bj1zBSvdvNoBD1q3Wt4HjrFKvpd700pSN39Slc')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'sportstylehub@example.com'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
