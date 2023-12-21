@@ -1,6 +1,6 @@
 // Update quantity on click
 
- document.querySelectorAll('.update-link').forEach(function (link) {
+document.querySelectorAll('.update-link').forEach(function (link) {
     link.addEventListener('click', function (e) {
         const form = this.previousElementSibling;
         form.submit();
