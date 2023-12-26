@@ -8,6 +8,7 @@ from django_countries.fields import CountryField
 
 from products.models import Product
 from profiles.models import UserProfile
+from bag.models import Coupon
 
 
 class Order(models.Model):
@@ -25,6 +26,8 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
+    coupon = models.ForeignKey(
+        Coupon, on_delete=models.SET_NULL, null=True, blank=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
