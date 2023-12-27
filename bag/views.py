@@ -192,7 +192,7 @@ def coupon_delete(request, coupon_id):
     if not request.user.is_superuser:
         messages.error(request, 'Only admins have permission to delete\
             coupons.')
-        return redirect(reverse('home'))
+        return redirect(reverse('index'))
 
     coupon = get_object_or_404(Coupon, pk=coupon_id)
     coupon.delete()
@@ -200,3 +200,15 @@ def coupon_delete(request, coupon_id):
     return redirect(reverse('coupons_manage'))
 
 
+@login_required
+def coupon_delete_confirmation(request, coupon_id):
+    # Retrieve the coupon
+    coupon = get_object_or_404(Coupon, pk=coupon_id)
+
+    if request.method == 'POST':
+        # Delete the coupon
+        coupon.delete()
+        messages.success(request, 'Coupon deleted successfully!')
+        return redirect('coupons_manage')
+
+    return render(request, 'bag/coupon_delete_confirmation.html', {'coupon': coupon})

@@ -12,7 +12,7 @@
 {% block extra_title %}Manage Coupons{% endblock %}
 
 {% block content %}
-<div class="container container-content">
+<div class="container container-content gap">
     <div class="row">
         <div class="col-10 mx-auto gamerStyle col-lg-8 offset-lg-2">
             <h1 class="text-center mt-2">Manage site coupons</h1>
@@ -48,46 +48,14 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <a class="btn my-2" data-bs-toggle="modal" data-bs-target="#delete-{{ coupon.id }}"><i
-                                class="fas fa-trash"></i> Delete Coupon</a>
-                        <!-- Credit for adapted Bootstrap 5 static backdrop Modal: https://getbootstrap.com/docs/5.0/components/modal/ -->
-                        <div class="modal fade" id="delete-{{ coupon.id }}" data-bs-backdrop="static"
-                            data-bs-keyboard="false" tabindex="-1"
-                            aria-labelledby="coupon-delete-label-{{ coupon.code }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content gamerStyle">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title w-100 text-center"
-                                            id="coupon-delete-label-{{ coupon.code }}">Delete Coupon</h2>
-                                    </div>
-                                    <div class="modal-body altFont">
-                                        <p>Are you sure you want to delete coupon <span
-                                                class="highlight">{{ coupon.id }}</span>?</p>
-                                        <p>The contents of the coupon are as follows:</p>
-                                        <p class="altFont"><span class="highlight">Code:</span> {{ coupon.code }}</p>
-                                        <p class="altFont"><span class="highlight">Amount:</span> {{ coupon.amount }}
-                                        </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="row w-100">
-                                            <!-- Modal buttons -->
-                                            <div class="col-7 text-start">
-                                                <a href="{% url 'coupon_delete' coupon.id %}" class="btn my-2">Delete
-                                                    <span class="d-none d-sm-inline">Coupon</span></a>
-                                            </div>
-                                            <div class="col-5 text-end">
-                                                <a data-bs-dismiss="modal" class="btn my-2">Cancel</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="{% url 'coupon_delete_confirmation' coupon.id %}" class="btn my-2">
+                            <i class="fas fa-trash"></i> Delete Coupon
+                        </a>
                     </div>
                     <hr class="w-100 m-auto highlight mb-1">
                     {% endfor %}
                     {% else %}
-                    <!-- Content to display if there is no coupons -->
+                    <!-- Content to display if there are no coupons -->
                     <p class="altFont text-center">There are no coupons at the moment. Why not add one?</p>
                     {% endif %}
                 </div>
