@@ -37,7 +37,7 @@
     {% endblock %}
     {% block extra_js %}
     {% endblock %}
-    <title>Sport Style Hub {% block extra_title %}{% endblock %}</title>
+    <title>{% block extra_title %}Sport Style Hub{% endblock %}</title>
 </head>
 
 <body>
@@ -90,6 +90,7 @@
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <a href="{% url 'coupons_manage' %}" class="dropdown-item">Manage Coupons</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>

@@ -8,6 +8,7 @@ def bag_contents(request):
     coupon_id = request.session.get('coupon_id', int())
     bag_items = []
     total = 0
+    savings = 0
     product_count = 0
     bag = request.session.get('bag', {})
     coupon_amount = 0 

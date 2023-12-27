@@ -6,6 +6,8 @@ from django.contrib import messages
 
 from .models import Coupon
 from products.models import Product
+from .forms import FormCoupon
+
 
 
 
@@ -126,6 +128,75 @@ def remove_from_bag(request, item_id):
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
 
+@login_required
+@require_http_methods(["GET", "POST"])
+def coupon_apply(request):
+    # View to check code entered against codes in the coupon model
+    code = request.POST.get('coupon-code')
 
+    # Checking for blank coupon submissions
+    if not code:
+        messages.error(request, "You didn't enter a coupon code!")
+        return redirect(reverse('view_bag'))
+
+    try:
+        coupon = Coupon.objects.get(code=code)
+        request.session['coupon_id'] = coupon.id
+        messages.success(request, f'Coupon code: { code } applied')
+    except Coupon.DoesNotExist:
+        request.session['coupon_id'] = None
+        messages.warning(request, f'Coupon code: { code } not accepted')
+        return redirect('view_bag')
+    else:
+        return redirect('view_bag')
+
+
+@login_required
+def coupons_manage(request):
+    # View to allow admins to see the manage coupons page
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only admins have permission to manage\
+            coupons.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        coupon_form = FormCoupon(request.POST)
+
+        # Check if the coupon form is valid and display appropriate message
+        if coupon_form.is_valid():
+            form_data = coupon_form.save(commit=False)
+            form_data.code = form_data.code.upper()
+            form_data.save()
+            messages.success(request, 'Coupon added successfully!')
+            return redirect('coupons_manage')
+        else:
+            messages.error(request, 'Unable to add coupon, please check your \
+                form information is correct.')
+            return redirect('coupons_manage')
+    else:
+        coupon_form = FormCoupon()
+
+    coupon_form = FormCoupon()
+    coupons = Coupon.objects.all()
+    context = {
+        'coupons': coupons,
+        'coupon_form': coupon_form,
+    }
+
+    return render(request, 'bag/coupons_manage.html', context)
+
+
+@login_required
+def coupon_delete(request, coupon_id):
+    # View to allow admins to delete coupons
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admins have permission to delete\
+            coupons.')
+        return redirect(reverse('home'))
+
+    coupon = get_object_or_404(Coupon, pk=coupon_id)
+    coupon.delete()
+    messages.success(request, 'Coupon deleted successfully!')
+    return redirect(reverse('coupons_manage'))
 
 
