@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container container-content gap">
+    <div class="row">
+        <div class="col-10 mx-auto gamerStyle col-lg-8 offset-lg-2">
+            <h2 class="text-center mt-2">Confirm Coupon Deletion</h2>
+            <p class="text-center">Are you sure you want to delete the following coupon?</p>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <p><span class="highlight me-1">Code:</span> <span class="altFont">{{ coupon.code }}</span></p>
+                    <p><span class="highlight me-1">Amount:</span> <span class="altFont">{{ coupon.amount }}</span></p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <!-- Confirmation form -->
+                    <form action="{% url 'coupon_delete' coupon.id %}" method="post">
+                        {% csrf_token %}
+                        <!-- Button to delete coupon -->
+                        <button type="submit" class="btn btn-danger">Delete Coupon</button>
+                        <!-- Button to cancel deletion and go back to coupons management -->
+                        <a href="{% url 'coupons_manage' %}" class="btn btn-secondary ms-2">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
