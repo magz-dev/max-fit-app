@@ -8,17 +8,9 @@ def bag_contents(request):
     coupon_id = request.session.get('coupon_id', int())
     bag_items = []
     total = 0
-    savings = 0
     product_count = 0
     bag = request.session.get('bag', {})
     coupon_amount = 0 
-
-    # Checks coupon code entered against Coupon model
-    try:
-        coupon = Coupon.objects.get(id=coupon_id)
-
-    except Coupon.DoesNotExist:
-        coupon = None
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
@@ -42,12 +34,17 @@ def bag_contents(request):
                     'size': size,
                 })
 
-        # Applies discount if Coupon is found
-        if coupon is not None:
-            coupon_amount = coupon.amount
-            savings = total*(coupon_amount/Decimal('100'))
-            total = total - savings
+    # Checks coupon code entered against Coupon model
+    try:
+        coupon = Coupon.objects.get(id=coupon_id)
+    except Coupon.DoesNotExist:
+        coupon = None
 
+    # Applies discount if Coupon is found
+    if coupon is not None:
+        coupon_amount = coupon.amount
+        savings = total * (coupon_amount / Decimal('100'))
+        total = total - savings
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
