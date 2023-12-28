@@ -147,8 +147,9 @@ def coupon_apply(request):
         request.session['coupon_id'] = None
         messages.warning(request, f'Coupon code: { code } not accepted')
         return redirect('view_bag')
-    else:
-        return redirect('view_bag')
+    except Exception as e:
+        messages.error(request, f'Error applying coupon: {e}')
+        return redirect(reverse('view_bag'))
 
 
 @login_required
