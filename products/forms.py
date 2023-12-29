@@ -5,7 +5,6 @@ from .models import Product, Category
 
 # Create a form for handling Product model data
 class ProductForm(forms.ModelForm):
-
     # Meta class to specify the model and fields for the form
     class Meta:
         model = Product
@@ -29,3 +28,12 @@ class ProductForm(forms.ModelForm):
         # Add custom attributes to form fields for styling
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class ReviewForm(forms.ModelForm):
+    
+    class Meta:
+        model = Review
+        fields = '__all__'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
