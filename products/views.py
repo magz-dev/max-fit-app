@@ -149,3 +149,18 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def add_review(request, product_id):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False) # Generate the review, but don't save yet
+            product = Product.objects.get(pk=product_id) # Get the product to attach to this review
+            review.product = product # Attach it
+            review.save() # Now save
+            messages.success(request, 'Review Added Successfully')
+        else:
+            messages.error(
+                request, 'Failed to add your review. Please check the form.')
+    return redirect(reverse('product_detail', args=[product_id]))
