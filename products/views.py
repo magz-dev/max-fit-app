@@ -71,7 +71,7 @@ def product_detail(request, product_id):
     """
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
-    reviews = product.reviews.all()
+    reviews = product.reviews.all().order_by('-created_at')
     context = {
         'product': product,
         'reviews': reviews,

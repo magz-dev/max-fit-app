@@ -142,6 +142,7 @@
             <!-- List of Reviews -->
             <div class="col-12 mt-1 px-0">
                 {% for review in product.reviews.all %}
+                <p class="text-muted">Created at: {{ review.created_at }}</p>
                 <p><strong>{{ review.profile.user.username }}</strong></p>
                 <p>{{ review.review_text }}</p>
                 {% endfor %}

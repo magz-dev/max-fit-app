@@ -39,4 +39,4 @@ class Review(models.Model):
     profile = models.ForeignKey(UserProfile, related_name='reviews', null=True,
                                 blank=True, on_delete=models.SET_NULL)
     review_text = models.TextField([MaxLengthValidator(limit_value=500)], max_length=500, null=True, blank=False)
-    # created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)

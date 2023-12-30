@@ -22,6 +22,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ReviewAdmin (admin.ModelAdmin):
     list_display = (
+        'created_at',
         'review_text',
     )
 
