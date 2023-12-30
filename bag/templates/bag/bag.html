@@ -118,12 +118,19 @@
 
                     </tr>
                     {% endfor %}
-
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
+                            <label class="form-check-label" for="id-save-info">
+                                <h6>
+                                    {% if not user.is_authenticated %}
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to complete checkout.
+                                {% endif %}
+                                </h6>
+                            </label>
 
                             <!-- Bag summary and total -->
-                            <h6 class="highlight">Apply coupon</h6>
+                            <h6 class="highlight gap">Apply coupon</h6>
                             <form action="{% url 'coupon_apply' %}" method='POST' class="mb-2">
                                 {% csrf_token %}
                                 <input type="text" name="coupon-code" class="w-50" maxlength="10">
@@ -132,9 +139,10 @@
                             {% if not coupon == None %}
                             <div class="altFont mb-2">
                                 <p>Current code: <span class="highlight">{{ coupon }}</span></p>
-                                <p>Savings: <span class="highlight">£{{ savings|floatformat:2 }} - {{ coupon_amount }}%</span> off!</p>
+                                <p>Savings: <span class="highlight">£{{ savings|floatformat:2 }} -
+                                        {{ coupon_amount }}%</span> off!</p>
                             </div>
-                        {% endif %}
+                            {% endif %}
                             <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
                             <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
@@ -160,12 +168,14 @@
                             </a>
 
                             <!-- 'Secure Checkout' button -->
+                            {% if user.is_authenticated %}
                             <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
                                 </span>
                             </a>
+                            {% endif %}
                         </td>
                     </tr>
                 </table>
