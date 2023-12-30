@@ -123,15 +123,19 @@
             </div>
         </div>
         <!-- Reviews Section -->
+        <!-- Reviews Section -->
         <div class="mt-3">
             <h5 class="font-weight-bold">Product Reviews:</h5>
             <p>{{ review_form }}</p>
-            <form method="post" action="{% url 'product_detail' product.id %}">
+            <form method="post" action="{% url 'add_review' product.id %}">
+                
                 {% csrf_token %}
                 <textarea name="review" rows="4" cols="50" placeholder="Add your review here"></textarea>
                 <br>
                 <button type="submit" class="btn btn-black">Submit Review</button>
+            </form>
         </div>
+
         <div class="row gap">
             <!-- Display review information if at least one review exists -->
             {% if product.reviews.exists %}
@@ -141,13 +145,20 @@
                 <p><strong>{{ review.profile.user.username }}</strong></p>
                 <p>{{ review.review_text }}</p>
                 {% endfor %}
+                
             </div>
             <div class="col-6">
                 {% if request.user.is_superuser %}
-                <a href="{% url 'delete_review' review.id %}" class="btn my-2">
-                    <i class="fas fa-trash"></i> Delete Review
-                </a>
+                {% for review in product.reviews.all %}
+                <div class="col-6">
+                    <a href="{% url 'delete_review' product_id=product.id review_id=review.id %}" class="btn my-2">
+                        <i class="fas fa-trash"></i> Delete Review
+                    </a>
+                </div>
+                <hr class="w-100 m-auto highlight mb-1 ">
+                {% endfor %}
                 {% endif %}
+
             </div>
             <hr class="w-100 m-auto highlight mb-1 ">
             {% else %}

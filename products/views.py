@@ -4,8 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category, UserProfile
+from .models import Product, Category, UserProfile, Review 
 from .forms import ProductForm, ReviewForm
+
 
 # Create your views here.
 
@@ -175,13 +176,13 @@ def add_review(request, product_id):
 
 
 @login_required
-def delete_review(request, product_id):
-    # View to allow admins to delete coupons
+def delete_review(request, product_id, review_id):
+    # View to allow admins to delete reviews
     if not request.user.is_superuser:
         messages.error(request, 'Only admins have permission to delete reviews.')
         return redirect(reverse('index'))
 
-    review = get_object_or_404(Review, pk=product_id)
+    review = get_object_or_404(Review, pk=review_id)
     review.delete()
     messages.success(request, 'Review deleted successfully!')
     return redirect(reverse('product_detail', args=[product_id]))

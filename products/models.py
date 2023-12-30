@@ -1,5 +1,7 @@
 from django.db import models
 from profiles.models import UserProfile
+from django.core.validators import MaxLengthValidator
+
 
 # Create your models here.
 
@@ -36,4 +38,5 @@ class Review(models.Model):
                                 blank=True, on_delete=models.SET_NULL)
     profile = models.ForeignKey(UserProfile, related_name='reviews', null=True,
                                 blank=True, on_delete=models.SET_NULL)
-    review_text = models.TextField()
+    review_text = models.TextField([MaxLengthValidator(limit_value=500)], max_length=500, null=True, blank=False)
+    # created_at = models.DateTimeField(auto_now_add=True)
