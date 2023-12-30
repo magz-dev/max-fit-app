@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, UserProfile
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -63,17 +63,21 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
 def product_detail(request, product_id):
     """ 
     View to show individual product details 
     """
     product = get_object_or_404(Product, pk=product_id)
-
+    review_form = ReviewForm()
+    reviews = product.reviews.all()
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
+
 
 @login_required
 def add_product(request):
@@ -136,6 +140,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_product(request, product_id):
     """ 
@@ -151,18 +156,7 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-def add_review(request, product_id):
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            review = form.save(commit=False) # Generate the review, but don't save yet
-            product = Product.objects.get(pk=product_id) # Get the product to attach to this review
-            profile = UserProfile.objects.get(user=request.user)  # Get the profile to attach to this review
-            review.profile = profile
-            review.product = product # Attach it
-            review.save() # Now save
-            messages.success(request, 'Review Added Successfully')
-        else:
-            messages.error(
-                request, 'Failed to add your review. Please check the form.')
-    return redirect(reverse('product_detail', args=[product_id]))
+
+
+
+
