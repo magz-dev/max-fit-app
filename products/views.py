@@ -156,7 +156,35 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
+def add_review(request, product_id):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST) # Put the review text in the form
+        if form.is_valid():
+            review = form.save(commit=False) # Generate the review, but don't save yet
+            product = Product.objects.get(pk=product_id) # Get the product to attach to this review
+            profile = UserProfile.objects.get(user=request.user)  # Get the profile to attach to this review
+            review.profile = profile
+            review.product = product # Attach it
+            review.save() # Now save
+            messages.success(request, 'Review Added Successfully')
+        else:
+            messages.error(
+                request, 'Failed to add your review. Please check the form.')
+    return redirect(reverse('product_detail', args=[product_id]))
 
+
+@login_required
+def delete_review(request, product_id):
+    # View to allow admins to delete coupons
+    if not request.user.is_superuser:
+        messages.error(request, 'Only admins have permission to delete reviews.')
+        return redirect(reverse('index'))
+
+    review = get_object_or_404(Review, pk=product_id)
+    review.delete()
+    messages.success(request, 'Review deleted successfully!')
+    return redirect(reverse('product_detail', args=[product_id]))
 
 
 
