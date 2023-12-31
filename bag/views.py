@@ -138,7 +138,6 @@ def coupon_apply(request):
     if not code:
         messages.error(request, "You didn't enter a coupon code!")
         return redirect(reverse('view_bag'))
-
     try:
         coupon = Coupon.objects.get(code=code)
         request.session['coupon_id'] = coupon.id
@@ -177,7 +176,7 @@ def coupons_manage(request):
     else:
         coupon_form = FormCoupon()
 
-    coupon_form = FormCoupon()
+    
     coupons = Coupon.objects.all()
     context = {
         'coupons': coupons,
