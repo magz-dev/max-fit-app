@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} 500 Error Page {% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="display-4">Page Not found</h1>
+    <p class="lead">Sorry, this page is missing or does not exist.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'index' %}" role="button">Go To Our Home Page</a>
+  </div>
+
+{% endblock %}
