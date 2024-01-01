@@ -22,7 +22,8 @@ footer {
    text-align: center;
    color: #6c757d;
    margin-top: auto;
-   width: 100%; /* Ensure full width */
+   width: 100%;
+   /* Ensure full width */
 }
 
 /* Styles for specific text elements */
@@ -46,13 +47,14 @@ h1 {
 
 /* Spacing styles */
 .gap {
-   margin-top: 140px;
+   margin-top: 135px;
 }
 
 .wrap {
    max-width: 600px;
-   word-wrap:break-word;
+   word-wrap: break-word;
 }
+
 .style {
    margin-top: 15px;
    margin-bottom: 10px;
@@ -129,10 +131,10 @@ input[name="q"]::placeholder {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-   width: 0; 
-   height: 0; 
+   width: 0;
+   height: 0;
    border-left: 4px solid transparent;
-   border-right: 4px solid transparent; 
+   border-right: 4px solid transparent;
    border-bottom: 10px solid black;
    position: absolute;
    top: -10px;
