@@ -3,7 +3,6 @@ from profiles.models import UserProfile
 from django.core.validators import MaxLengthValidator
 from django.core.exceptions import ValidationError
 
-
 # Create your models here.
 
 class Category(models.Model): 
