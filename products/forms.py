@@ -36,4 +36,3 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields =  ('review_text',)
      
-    

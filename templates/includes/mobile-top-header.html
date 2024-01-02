@@ -1,5 +1,4 @@
-
-<li class="list-inline-item">
+<li class="list-inline-item flex-wrap">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -23,7 +22,7 @@
         </form>
     </div>
 </li>
-<li class="list-inline-item dropdown">
+<li class="list-inline-item dropdown flex-wrap">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -45,7 +44,7 @@
         {% endif %}
     </div>
 </li>
-<li class="list-inline-item">
+<li class="list-inline-item flex-wrap">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
         href="{% url 'view_bag' %}">
         <div class="text-center">

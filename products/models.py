@@ -40,9 +40,3 @@ class Review(models.Model):
                                 blank=True, on_delete=models.SET_NULL)
     review_text = models.TextField([MaxLengthValidator(limit_value=500)], max_length=500, null=True, blank=False)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
-
-
-    def __str__(self):
-        # Custom validation for minimum length
-         if len(self.review_text) < 8:
-            raise ValidationError('Review must be at least 8 characters long.')

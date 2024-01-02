@@ -132,7 +132,7 @@ def remove_from_bag(request, item_id):
 @require_http_methods(["GET", "POST"])
 def coupon_apply(request):
     # View to check code entered against codes in the coupon model
-    code = request.POST.get('coupon-code')
+    code = request.POST.get('coupon-code').upper()
 
     # Checking for blank coupon submissions
     if not code:
@@ -145,19 +145,13 @@ def coupon_apply(request):
     except Coupon.DoesNotExist:
         request.session['coupon_id'] = None
         messages.warning(request, f'Coupon code: { code } not accepted')
-        return redirect('view_bag')
     except Exception as e:
         messages.error(request, f'Error applying coupon: {e}')
-        return redirect(reverse('view_bag'))
+    return redirect('view_bag')
 
 
 @login_required
 def coupons_manage(request):
-    # View to allow admins to see the manage coupons page
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only admins have permission to manage\
-            coupons.')
-        return redirect(reverse('home'))
 
     if request.method == 'POST':
         coupon_form = FormCoupon(request.POST)
@@ -188,11 +182,6 @@ def coupons_manage(request):
 
 @login_required
 def coupon_delete(request, coupon_id):
-    # View to allow admins to delete coupons
-    if not request.user.is_superuser:
-        messages.error(request, 'Only admins have permission to delete\
-            coupons.')
-        return redirect(reverse('index'))
 
     coupon = get_object_or_404(Coupon, pk=coupon_id)
     coupon.delete()
