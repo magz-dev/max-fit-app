@@ -128,7 +128,7 @@
             <p>{{ review_form }}</p>
             <form method="post" action="{% url 'add_review' product.id %}">
                 {% csrf_token %}
-                <textarea name="review" rows="4" cols="50" placeholder="Add your review here"></textarea>
+                <textarea name="review_text" rows="4" cols="50" placeholder="Add your review here"></textarea>
                 <br>
                 <button type="submit" class="btn btn-black">Submit Review</button>
             </form>

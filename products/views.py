@@ -172,6 +172,7 @@ def add_review(request, product_id):
         else:
             messages.error(
                 request, 'Failed to add your review. Please check the form.')
+           
     return redirect(reverse('product_detail', args=[product_id]))
 
 
