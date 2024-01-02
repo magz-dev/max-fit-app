@@ -2,7 +2,8 @@
 
 [View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
-![Screenshot 2024-01-01 230527](https://github.com/magz-dev/sport-style-hub/assets/97630146/746eac3c-56e3-42a3-a5af-a2fc6421cc15)
+![Screenshot 2024-01-02 001511](https://github.com/magz-dev/sport-style-hub/assets/97630146/f63d6003-bfae-4556-b7d9-651c2da6c146)
+
 
 ### Frameworks, Libraries & Programs Used
 * Bootstrap 4.6 - The framework for the website. Additional CSS styling was also implemented in style.css.
