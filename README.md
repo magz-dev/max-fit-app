@@ -2,7 +2,6 @@
 
 [View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
-![Screenshot 2024-01-02 001511](https://github.com/magz-dev/sport-style-hub/assets/97630146/f63d6003-bfae-4556-b7d9-651c2da6c146)
 
 
 ### Frameworks, Libraries & Programs Used
