@@ -140,8 +140,9 @@ def delete_product(request, product_id):
     Delete a product from the store 
     """
     product = get_object_or_404(Product, pk=product_id)
+    product_name = product.name 
     product.delete()
-    messages.success(request, 'Product deleted!')
+    messages.success(request, f'{product_name} deleted')
     return redirect(reverse('products'))
 
 
@@ -166,63 +167,36 @@ def add_review(request, product_id):
 
 @login_required
 def delete_review(request, product_id, review_id):
-    # View to allow admins to delete reviews
-    if not request.user.is_superuser:
-        messages.error(request, 'Only admins have permission to delete reviews.')
-        return redirect(reverse('index'))
-
     review = get_object_or_404(Review, pk=review_id)
     review.delete()
     messages.success(request, 'Review deleted successfully!')
     return redirect(reverse('product_detail', args=[product_id]))
 
 
-@login_required()
-def edit_review(request, review_id):
+@login_required
+def edit_review(request, product_id, review_id):
     """
-    Renders form to edit review.
-    Logged in Users Only (redirects to log in).
-    Updates review on database.
+    View to edit review
     """
     review = get_object_or_404(Review, pk=review_id)
-    product = Product.objects.filter(reviews=review)[0]
-
-    # Checks user is author of review
-    # redirects to product detail if not
-    if request.user != review.user:
-        messages.error(request, 'You can only edit your own reviews.')
-        return redirect(reverse('product_detail', args=[product.id]))
-
-    # Handles Form Submission
-    if request.method == "POST":
-        form = ReviewForm(request.POST, request.FILES, instance=review)
-
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
-            review = form.save()
-            review.is_approved = False
-            review.save()
-         
-            messages.success(
-                request,
-                "Your review has been updated. "
-            )
+            form.save()
+            messages.success(request, 'You updated your review!')
+            
         else:
-            messages.error(request, "Form invalid, please try again.")
-
-    # Handles View Rendering
+            messages.error(request, 'Failed to update your review!\
+                                     Please try again.')
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, 'You are editing your review... ')
-
-    # # Sets current product & form content
-    # context = {
-    #     'form': form,
-    #     'review': review,
-    #     'product': product,
-    # }
-
-    return render(request, template, context)
-
+        messages.info(request, f'You are editing your review.')
+    
+    context = {
+        'form': form,
+        'review': review,
+    }
+    return redirect(reverse('product_detail', args=[product_id]))
 
 
 
