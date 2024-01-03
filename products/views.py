@@ -177,6 +177,51 @@ def delete_review(request, product_id, review_id):
     return redirect(reverse('product_detail', args=[product_id]))
 
 
+@login_required()
+def edit_review(request, review_id):
+    """
+    Renders form to edit review.
+    Logged in Users Only (redirects to log in).
+    Updates review on database.
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    product = Product.objects.filter(reviews=review)[0]
+
+    # Checks user is author of review
+    # redirects to product detail if not
+    if request.user != review.user:
+        messages.error(request, 'You can only edit your own reviews.')
+        return redirect(reverse('product_detail', args=[product.id]))
+
+    # Handles Form Submission
+    if request.method == "POST":
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+
+        if form.is_valid():
+            review = form.save()
+            review.is_approved = False
+            review.save()
+         
+            messages.success(
+                request,
+                "Your review has been updated. "
+            )
+        else:
+            messages.error(request, "Form invalid, please try again.")
+
+    # Handles View Rendering
+    else:
+        form = ReviewForm(instance=review)
+        messages.info(request, 'You are editing your review... ')
+
+    # # Sets current product & form content
+    # context = {
+    #     'form': form,
+    #     'review': review,
+    #     'product': product,
+    # }
+
+    return render(request, template, context)
 
 
 

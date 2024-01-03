@@ -126,17 +126,14 @@
         <div class="mt-3 text-center">
             <h2 class="logo-font mb-3">Product Reviews</h2>
             <p class="font-body">Have you bought this product? Leave a review!</p>
-            <a href="/products/add_review" class="btn my-2 btn-black">
-                ADD REVIEW
-            </a>
-        </div>
-            <!-- <p>{{ review_form }}</p>
+        
+            <p>{{ review_form }}</p>
             <form method="post" action="{% url 'add_review' product.id %}">
                 {% csrf_token %}
                 <textarea name="review_text" rows="4" cols="50" placeholder="Add your review here"></textarea>
                 <br>
-                <button type="submit" class="btn btn-black">Submit Review</button>
-            </form> -->
+                <button type="submit" class="btn btn-black mb-3">Submit Review</button>
+            </form>
         </div>
         <div class="row">
            
@@ -157,15 +154,16 @@
             <!-- Display review information if at least one review exists -->
             {% if product.reviews.exists %}
             <div class="col-6">
-                {% if request.user.is_superuser %}
-                {% for review in product.reviews.all %}
-                <div class="col-6">
+                {% if request.user.is_authenticated and request.user == review.profile.user %}
+                <div class="col-md-6">
                     <a href="{% url 'delete_review' product_id=product.id review_id=review.id %}" class="btn my-2">
                         <i class="fas fa-trash"></i> Delete Review
                     </a>
-                </div>               
-                {% endfor %}
-                {% endif %}
+                    <a href="{% url 'edit_review' product_id=product.id review_id=review.id %}" class="btn my-2">
+                        <i class="fas fa-edit"></i> Edit Review
+                    </a>
+                </div>
+            {% endif %}
             </div>
             <hr class="w-100 m-auto highlight mb-2">
             {% else %}
