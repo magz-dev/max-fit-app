@@ -204,9 +204,16 @@ input[name="q"]::placeholder {
    }
 }
 
+.custom {
+   border-bottom: 1px solid #ccc; /* Border between individual reviews */
+   margin-bottom: 15px; /* Margin between individual reviews */
+   padding-bottom: 15px; /* Padding inside individual reviews */
+
+}
+
 /* Styles for form content */
 .allauth-form-inner-content p {
-   margin-top: 1.5rem;
+   margin-top: 2.5rem;
    color: #6c757d;
 }
 

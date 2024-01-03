@@ -26,9 +26,8 @@
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
                 {% else %}
-                <a href="">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+
                 {% endif %}
             </div>
         </div>
@@ -142,7 +141,7 @@
                 <div class="container">
                     {% if product.reviews.exists %}
                     {% for review in product.reviews.all %}
-                    <div class="row">
+                    <div class="row custom">
                         <div class="col-md-6 wrap">
                             <p><strong>{{ review.profile.user.username }}</strong></p>
                             <p>{{ review.review_text }}</p>
@@ -160,26 +159,21 @@
                                 class="btn my-2">
                                 <i class="fas fa-edit"></i> Edit Review
                             </a>
-
                         </div>
                         {% endif %}
-                        {% endfor %}
                     </div>
+                    {% endfor %}
+                    {% else %}
+                    <!-- Content to display if there are no reviews -->
+                    <p class="altFont text-center">There are no reviews at the moment.</p>
+                    {% endif %}
                 </div>
-                <!-- Display review information if at least one review exists -->
-                <hr class="w-100 m-auto highlight mb-2">
-                {% else %}
-                <!-- Content to display if there are no reviews -->
-                <p class="altFont text-center">There are no reviews at the moment.</p>
-                {% endif %}
             </div>
         </div>
-    </div>
-    {% endblock %}
+        {% endblock %}
 
-    <!-- Additional JavaScript -->
-    {% block postloadjs %}
-    {{ block.super }}
-
-    {% include 'products/includes/quantity_input_script.html' %}
-    {% endblock %}
+        <!-- Additional JavaScript -->
+        {% block postloadjs %}
+        {{ block.super }}
+        {% include 'products/includes/quantity_input_script.html' %}
+        {% endblock %}
