@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- Page header block -->
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_title %}{% endblock %}
+
+{% block content %}
+<div class="container container-content gap">
+    <div class="row">
+        <div class="col-10 mx-auto col-lg-8 offset-lg-2 text-center">
+            <h2 class="logo-font mb-3">Review editing</h2>
+            <div class="row ">
+                <form method="post" action="{% url 'edit_review' product_id=product_id review_id=review.id %}">
+                    {% csrf_token %}
+                    <textarea name="review_text" rows="4" cols="50"
+                        placeholder="Edit your review here">{{ review.review_text }}</textarea>
+                    <br>
+                    <button type="submit" class="btn btn-black">Save Changes</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
