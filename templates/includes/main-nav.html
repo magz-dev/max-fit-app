@@ -8,8 +8,8 @@
         </li>
         <!-- Dropdown menu for ALL PRODUCTS -->
         <li class="nav-item dropdown">
-            <a class="font-weight-bold nav-link text-black mr-5" id="all-products-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="font-weight-bold nav-link text-black mr-5" id="all-products-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 ALL PRODUCTS
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -22,12 +22,11 @@
 
         <!-- Dropdown menu for WOMEN'S -->
         <li class="nav-item dropdown">
-            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="women-link"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="font-weight-bold nav-link text-black mr-5" href="#" id="women-link" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
                 WOMEN'S
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=women_footwear" class="dropdown-item">Footwear</a>
                 <a href="{% url 'products' %}?category=women_tops" class="dropdown-item">Tops</a>
                 <a href="{% url 'products' %}?category=women_accesories" class="dropdown-item">Accesories</a>
                 <a href="{% url 'products' %}?category=women_essentials" class="dropdown-item">Essentials</a>
@@ -46,7 +45,6 @@
                 MEN'S
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=men_footwear" class="dropdown-item">Footwear</a>
                 <a href="{% url 'products' %}?category=men_tops" class="dropdown-item">Tops</a>
                 <a href="{% url 'products' %}?category=men_accesories" class="dropdown-item">Accesories</a>
                 <a href="{% url 'products' %}?category=men_essentials" class="dropdown-item">Essentials</a>
@@ -66,9 +64,12 @@
                 ALL SPECIALS
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=men_clearance,women_clearance" class="dropdown-item">All Clearance</a>
-                <a href="{% url 'products' %}?category=men_new_arrivals,women_new_arrivals" class="dropdown-item">All New Arrivals</a>
-                <a href="{% url 'products' %}?category=men_clearance,men_new_arrivals,women_clearance,women_new_arrivals" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=men_clearance,women_clearance" class="dropdown-item">All
+                    Clearance</a>
+                <a href="{% url 'products' %}?category=men_new_arrivals,women_new_arrivals" class="dropdown-item">All
+                    New Arrivals</a>
+                <a href="{% url 'products' %}?category=men_clearance,men_new_arrivals,women_clearance,women_new_arrivals"
+                    class="dropdown-item">All Specials</a>
             </div>
         </li>
 </div>
