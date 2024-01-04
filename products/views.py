@@ -189,7 +189,7 @@ def edit_review(request, product_id, review_id):
             messages.error(request, 'Failed to update your review! Please try again.')
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, 'You are editing your review.')
+        messages.info(request, 'You are editing your review!')
 
     template = 'products/edit_review.html'
     context = {
