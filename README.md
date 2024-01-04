@@ -56,10 +56,11 @@ Google Fonts was used for the following fonts:
 
 ### Wireframes
 
-Wireframes were created for mobile, tablet and desktop.
+[Wireframes](docs/wireframes) were created for mobile, tablet and desktop.
 
+- - -
 
-
+## Technologies Used
 
 ### Frameworks, Libraries & Programs Used
 * Bootstrap 4.6 - The framework for the website. Additional CSS styling was also implemented in style.css.
@@ -73,22 +74,33 @@ Wireframes were created for mobile, tablet and desktop.
 * Pillow - Python Imaging Library.
 * Psycopg2 - Postgres adaptor to allow smooth communication between the backend and the database.
 * Stripe - Stripe package part of the Stripe ecosystem to manage secure online payments.
-* SQlite -  Used as the built in Django database for development.
+* SQlite3 -  Used as the built in Django database for development.
 * ElephanSQL - Postgres-based database host. Used to host the database for the live production app.
 * Djando Countries - Django application that provides country choices for forms.
-  
+* [Am I Responsive](https://ui.dev/amiresponsive) - To create the responsive images of the site on a variety of device sizes.
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+* [Google Dev Tools](https://developer.chrome.com/docs/devtools/) - To troubleshoot, test features and solve issues with responsiveness and styling.
+* [Pip](https://pypi.org/project/pip/) - A tool for installing Python packages.
+
 ### Languages Used
 * HTML5
 * CSS3
 * Javascript
 * Python
 
+### Stripe
+
+[Stripe](https://stripe.com/gb) has been used in the project to implement the payment system.
+
+Stripe for the website is currently in developer mode, which allows us to be able to process test payments to check the function of the site.
 
 - - -
+
 ## Deployment and Local Development
 
 ### Deployment 
 The project is deployed using Heroku. To deploy the project:
+
 #### Create the Live Database
 We have been using the sqlite3 database in development, however this is only available for use in development so we will need to create a new external database which can be accessed by Heroku.
 
@@ -296,6 +308,7 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 4. Add the URL for our deployed sites WebHook, give it a description and then click the add events button and select all events. Click Create endpoint.
 5. Now we can add the WebHook signing secret to our Heroku config variables as STRIPE_WH_SECRET.
 6. In settings.py:
+   
 ```
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
@@ -303,6 +316,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 ```
 
 ### Local Development
+
 #### How to Fork
 To fork the repository:
 
@@ -311,6 +325,7 @@ To fork the repository:
 3. Click on the fork button in the top right of the page.
 
 ### How to Clone
+
 #### To clone the repository:
 
 1. Log in (or sign up) to GitHub
@@ -323,13 +338,19 @@ To fork the repository:
 ```
 pip3 install -r requirements.txt
 ```
+
 - - -
+
 ## Testing
-Please refer to the TESTING.md file for all testing performed.
+
+Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
+
 - - -
+
 ## Credits
 
 ### Code
+
 * Bootstrap 4 - Bootstrap Library used throughout the project to add style. Bootstrap 4 was also used to make the site responsive by using the Bootstrap Grid System.
 * Code Institute's learning content.
 * Code Institute's walkthrough project for Boutique Ado.
