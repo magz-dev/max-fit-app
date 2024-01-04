@@ -357,8 +357,12 @@ Please refer to the [TESTING.md](TESTING.md) file for all testing performed.
 * [W3Schools](https://www.w3schools.com/default.asp)
 * Stack Overflow
 * [Javascript tutorial](https://www.youtube.com/watch?v=fbXHOVp_L_4)
+* [Django Tutorial](https://www.youtube.com/watch?v=gsW5gYTNi34)
+* Slack community
+* [Coupon model idea](https://github.com/JoeyyScott/gamer-supplies)
 
 ### Acknowledgements
+
 * Tutor support from the Code Institute.
 * My Mentor for helpful comments and supportive feedback.
 * Slack community for project assistance.
