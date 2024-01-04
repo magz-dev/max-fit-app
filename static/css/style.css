@@ -185,8 +185,12 @@ input[name="q"]::placeholder {
 /* Media query for large screens */
 @media (min-width: 1200px) {
    .container {
-      max-width: 80%;
+      max-width: 500px;
+      /* Adjust the max-width as needed */
+      margin: 0 auto;
+      /* Center the form on larger screens */
    }
+
 }
 
 /* Media query for medium screens */
@@ -204,10 +208,18 @@ input[name="q"]::placeholder {
    }
 }
 
+.control {
+   max-width: 60%;
+
+}
+
 .custom {
-   border-bottom: 1px solid #ccc; /* Border between individual reviews */
-   margin-bottom: 15px; /* Margin between individual reviews */
-   padding-bottom: 15px; /* Padding inside individual reviews */
+   border-bottom: 1px solid #ccc;
+   /* Border between individual reviews */
+   margin-bottom: 15px;
+   /* Margin between individual reviews */
+   padding-bottom: 15px;
+   /* Padding inside individual reviews */
 
 }
 
