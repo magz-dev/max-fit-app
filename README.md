@@ -40,6 +40,27 @@
   -  I want all the admin controls to be quick and easy to find and use.
 
 - - -
+
+## Design
+
+### Typography
+
+Google Fonts was used for the following fonts:
+
+* Permanent Marker is used for headings on the site. It is a cursive font.
+
+### Media
+* Favicon and logo icon is from [Icons8](https://icons8.com/).
+* Background photo is from [Adobe Stock](https://stock.adobe.com/uk/).
+* Products are from [JD Sports](https://www.jdsports.co.uk/).
+
+### Wireframes
+
+Wireframes were created for mobile, tablet and desktop.
+
+
+
+
 ### Frameworks, Libraries & Programs Used
 * Bootstrap 4.6 - The framework for the website. Additional CSS styling was also implemented in style.css.
 * Git -  For version control.
@@ -62,9 +83,7 @@
 * Javascript
 * Python
 
-### Media
-* Favicon, logo and delivery icon is from [Icons8](https://icons8.com/).
-* Background photo is from [Adobe Stock](https://stock.adobe.com/uk/)
+
 - - -
 ## Deployment and Local Development
 
