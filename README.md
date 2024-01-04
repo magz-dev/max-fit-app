@@ -2,6 +2,63 @@
 
 [View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/71824cdd-c0d1-4e4f-b78e-cb2b736b8119)
+
+- - -
+## User Experience
+
+###  User Stories
+
+#### As a first time user:
+  -  I want to understand the purpose of the site immediately upon entering.
+  -  I want to be able to find what I need easily and for the navigation to be easy to follow and intuitive.
+  -  I want to be able to view the site on a range of device sizes.
+  -  I want to be able to find promotional coupons.
+  -  I want to get feedback when interacting with the site.
+
+#### As a frequent user:
+  -  I want to be able to browse products easily, with options to filter and search to find things I need.
+  -  I want to be able to find out information about products.
+  -  I want to see ratings or reviews of a product to know more about the quality and whether it is right for me.
+  -  I want to be able to shop for multiple items at once, from across the site.
+  -  I want to be able to edit my shopping bag.
+  -  I want to know what I will be charged for delivery.
+  -  I want to be able to return to the main site without having to use the browser buttons.
+
+#### As a user with an account:
+  -  I want my account to be easy to set up.
+  -  I want my payment and order to be fully secure and trustworthy.
+  -  I want to be able to apply a discount code to my shopping bag.
+  -  I want to see my order history.
+  -  I want to be able to update and save my personal information.
+  -  I want to leave reviews of products I have purchased.
+  -  I want to be able to edit my reviews.
+  -  I do not want admins or other customers to be able to change my reviews.
+
+#### As an admin of the site:
+  -  I want to be able to add, remove and edit products.
+  -  I want all the admin controls to be quick and easy to find and use.
+
+- - -
+
+## Design
+
+### Typography
+
+Google Fonts was used for the following fonts:
+
+* Permanent Marker is used for headings on the site. It is a cursive font.
+
+### Media
+* Favicon and logo icon is from [Icons8](https://icons8.com/).
+* Background photo is from [Adobe Stock](https://stock.adobe.com/uk/).
+* Products are from [JD Sports](https://www.jdsports.co.uk/).
+
+### Wireframes
+
+Wireframes were created for mobile, tablet and desktop.
+
+
 
 
 ### Frameworks, Libraries & Programs Used
@@ -26,10 +83,8 @@
 * Javascript
 * Python
 
-### Media
-* Favicon, logo and delivery icon is from [Icons8](https://icons8.com/).
-* Background photo is from [Adobe Stock](https://stock.adobe.com/uk/)
 
+- - -
 ## Deployment and Local Development
 
 ### Deployment 
@@ -268,10 +323,10 @@ To fork the repository:
 ```
 pip3 install -r requirements.txt
 ```
-
+- - -
 ## Testing
 Please refer to the TESTING.md file for all testing performed.
-
+- - -
 ## Credits
 
 ### Code
