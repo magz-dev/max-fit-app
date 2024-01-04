@@ -12,10 +12,11 @@
 </div>
 {% endblock %}
 
+{% block extra_title %}Products{% endblock %}
+
 {% block content %}
 
 <!-- Main Content block -->
-
 <div class="overlay"></div>
 <div class="container-fluid gap">
     <div class="row">
@@ -81,7 +82,7 @@
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
-                         <!-- Product image -->
+                        <!-- Product image -->
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -151,20 +152,22 @@
         </div>
     </div>
 </div>
+
 <!-- Back to top button -->
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 {% endblock %}
-<!-- Back to top button -->
+
+<!-- Back to top button js -->
 {% block postloadjs %}
-    {{ block.super }}
+{{ block.super }}
 <script type="text/javascript">
-document.querySelector('.btt-link').addEventListener('click', function (e) {
-window.scrollTo(0, 0);
-});
+    document.querySelector('.btt-link').addEventListener('click', function (e) {
+        window.scrollTo(0, 0);
+    });
 </script>
 
 <script type="text/javascript" src="{% static 'products/js/products.js' %}"></script>
