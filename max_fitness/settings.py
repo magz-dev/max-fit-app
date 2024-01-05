@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['sportstylehub-73c15c72aa03.herokuapp.com', '8000-magzdev-sportstylehub-u80esv7qb0e.ws-eu107.gitpod.io']
+ALLOWED_HOSTS = ['sportstylehub-73c15c72aa03.herokuapp.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
