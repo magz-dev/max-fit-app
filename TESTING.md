@@ -100,3 +100,76 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 
 ### Testing User Stories
 
+#### As a first time user:
+-  I want to understand the purpose of the site immediately upon entering.
+-  I want to be able to find promotional coupons.
+
+User can immediately tell the purpose of the website and learn about special offers and promotional coupons.
+  
+![Screenshot 2024-01-05 032135](https://github.com/magz-dev/sport-style-hub/assets/97630146/2d0357d2-ab4c-4337-844d-66c15f885c9d)
+
+- - -
+
+-  I want to be able to find what I need easily and for the navigation to be easy to follow and intuitive.
+
+User can easily search, sort products or use a navigation bar.
+
+![Screenshot 2024-01-05 033051](https://github.com/magz-dev/sport-style-hub/assets/97630146/9fba13b2-d9cb-42a2-a78f-5b68d2f8e255)
+
+- - -
+
+#### As a frequent user:
+
+-  I want to get feedback when interacting with the site.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/59fdf719-381e-40b3-9639-5bdcbeb2b745)
+
+- - -
+
+-  I want to be able to find out information about products.
+-  I want to see ratings or reviews of a product to know more about the quality and whether it is right for me.
+  
+User can read product description, see ratings and reviews added by verified users.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/4c58d8cb-a18e-4be4-a267-1f139406bb7d)
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/40403891-ddeb-43ac-93ac-b22c0e43f035)
+
+- - -
+
+-  I want to be able to shop for multiple items at once, from across the site.
+-  I want to be able to edit my shopping bag.
+-  I want to know what I will be charged for delivery.
+   
+User can add multiple items, update the shopping bag and see if there is any delivery charge.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/87cd190b-66a1-4233-8bce-7e17de6b91b3)
+
+- - -
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/8efbdb9b-faeb-4b21-8c08-7ccb53f23356)
+
+- - -
+
+#### As a user with an account:
+
+-  I want to be able to apply a discount code to my shopping bag.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/046620ac-f81f-4d55-9006-e8747295dab2)
+
+![Screenshot 2024-01-05 034411](https://github.com/magz-dev/sport-style-hub/assets/97630146/6490346c-4c15-45fd-a1e6-57c10d829ff0)
+
+- - -
+
+-  I want to see my order history.
+-  I want to be able to update and save my personal information.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/1adb2f7d-bc51-496d-9dd5-a6d0ef59897d)
+
+- - -
+
+-  I want to leave reviews of products I have purchased.
+-  I want to be able to edit my reviews.
+
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/8675a828-ed7b-4059-9631-ec68ebb953f9)
+
