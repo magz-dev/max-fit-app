@@ -19,6 +19,7 @@
 #### As a frequent user:
   -  I want to be able to browse products easily, with options to filter and search to find things I need.
   -  I want to be able to find out information about products.
+  -  I want to be able to find and select my size.
   -  I want to see ratings or reviews of a product to know more about the quality and whether it is right for me.
   -  I want to be able to shop for multiple items at once, from across the site.
   -  I want to be able to edit my shopping bag.
