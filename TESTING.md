@@ -84,17 +84,19 @@ The W3C validator was used to validate the HTML on all pages of the website. It 
 #### env.py
 ![Screenshot 2024-01-05 022455](https://github.com/magz-dev/sport-style-hub/assets/97630146/bf91029b-7fd0-4492-b5b4-309381e4d314)
 
+### Lighthouse
 
+I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
+### Desktop Results
+![Screenshot 2024-01-05 023343](https://github.com/magz-dev/sport-style-hub/assets/97630146/535582e9-6795-410d-8eab-4b8523d026cb)
 
+### Mobile Results
+![Screenshot 2024-01-05 024018](https://github.com/magz-dev/sport-style-hub/assets/97630146/c670cc05-4c6d-428d-9b3b-4557ef89d0ca)
 
+- - -
 
-
-
-
-
-
-
+## Manual testing
 
 ### Testing User Stories
 
