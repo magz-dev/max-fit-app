@@ -133,7 +133,13 @@ User can read product description, see ratings and reviews added by verified use
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/4c58d8cb-a18e-4be4-a267-1f139406bb7d)
 
-![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/40403891-ddeb-43ac-93ac-b22c0e43f035)
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/69c8fda1-08ee-4ead-aefd-9e21f0b73337)
+
+- - -
+
+-  I want to be able to find and select my size.
+
+![Screenshot 2024-01-05 103337](https://github.com/magz-dev/sport-style-hub/assets/97630146/2ec4e44e-5f23-4b9e-b2d4-02f314a1b002)
 
 - - -
 
