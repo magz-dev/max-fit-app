@@ -13,7 +13,6 @@
   * [Media](#media)
   * [Wireframes](#wireframes)
 * [Technologies Used](#technologies-used)
-  * [Frameworks, Libraries & Programs Used] (#frameworks,-libraries,-&-programs-used)
   * [Languages Used](#languages-used)
   * [Stripe](#stripe)
 *  [Deployment and Local Development](#deployment-and-local-development)
