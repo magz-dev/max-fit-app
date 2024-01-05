@@ -9,7 +9,7 @@ Testing was ongoing throughout the entire build. During development I made use o
 ### W3C Validator
 
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
-* [style.css CSS](docs/testing/css.png)
+* [CSS](docs/testing/css.png)
 * [Index Page](docs/testing/home.png)
 * [Product Detail Page](docs/testing/product_detail.png)
 * [Products Page HTML](docs/testing/products.png)
