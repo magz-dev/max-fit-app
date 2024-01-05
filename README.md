@@ -1,5 +1,7 @@
 # Sport Style Hub - E-Commerce site
 
+The Sports Style Hub project is an E-Commerce website where passion meets performance. It is a fully responsive functional website intended to dedicate the pursuit of excellence in fitness, sports-wear, and leisure, to curate a collection of high-performance sportswear that empowers the user to achieve their fitness goals in a stylish way.  
+
 [View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/71824cdd-c0d1-4e4f-b78e-cb2b736b8119)
@@ -27,14 +29,14 @@
 
 #### As a first time user:
   -  I want to understand the purpose of the site immediately upon entering.
-  -  I want to be able to find what I need easily and for the navigation to be easy to follow and intuitive.
-  -  I want to be able to view the site on a range of device sizes.
+  -  I want to be able to easily find what I need as well as the navigation of the site to be easy to follow and intuitive.
+  -  I want to be able to view the site on a range of devices.
   -  I want to be able to find promotional coupons.
   -  I want to get feedback when interacting with the site.
 
 #### As a frequent user:
-  -  I want to be able to browse products easily, with options to filter and search to find things I need.
-  -  I want to be able to find out information about products.
+  -  I want to be able to browse products easily, with options to filter and search to find things I want.
+  -  I want to be able to find information about products.
   -  I want to be able to find and select my size.
   -  I want to see ratings or reviews of a product to know more about the quality and whether it is right for me.
   -  I want to be able to shop for multiple items at once, from across the site.
