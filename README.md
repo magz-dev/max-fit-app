@@ -1,4 +1,4 @@
-# Sport Style Hub - E-commerce site
+# Sport Style Hub - E-Commerce site
 
 [View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
