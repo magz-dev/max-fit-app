@@ -176,6 +176,8 @@ User can add multiple items, edit and update the shopping bag as well as see if 
 
 -  I want to be able to apply a discount code to my shopping bag.
 
+User has the ability apply discount codes/coupons to shopping bag.
+
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/9b6dcbb2-18b5-49dd-93c2-8ebfd1dccefc)
 
 - - -
@@ -183,12 +185,16 @@ User can add multiple items, edit and update the shopping bag as well as see if 
 -  I want to see my order history.
 -  I want to be able to update and save my personal information.
 
+User has the ability and function to view their order history and the ability to update and amend personal information. 
+
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/1adb2f7d-bc51-496d-9dd5-a6d0ef59897d)
 
 - - -
 
 -  I want to leave reviews of products I have purchased.
 -  I want to be able to edit my reviews.
+
+User has the ability to leave reviews of products upon purchasing and has the ability to amend their reviews of said products.
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/8675a828-ed7b-4059-9631-ec68ebb953f9)
 
