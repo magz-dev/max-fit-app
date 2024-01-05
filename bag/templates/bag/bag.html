@@ -16,13 +16,11 @@
 {% block content %}
 
 <!-- Main content of the page -->
-
 <div class="overlay"></div>
 <div class="container mb-2">
     <div class="row">
 
         <!-- Shopping Bag Section -->
-
         <div class="col">
             <hr>
             <h2 class="logo-font mb-4 gap">Shopping Bag</h2>
@@ -31,13 +29,11 @@
     </div>
 
     <!-- Check if bag_items exist -->
-
     <div class="row">
         <div class="col">
             {% if bag_items %}
 
             <!-- Display bag items in a table -->
-
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
@@ -51,7 +47,6 @@
                     </thead>
 
                     <!-- Loop through bag items and display details -->
-
                     {% for item in bag_items %}
                     <tr>
                         <td class="p-3 w-25">
