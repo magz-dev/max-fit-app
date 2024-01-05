@@ -4,6 +4,22 @@
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/71824cdd-c0d1-4e4f-b78e-cb2b736b8119)
 
+## Contents
+
+* [User Experience](#user-experience)
+  * [User Stories](#user-stories)
+* [Design](#design)
+  * [Typography](#typography)
+  * [Media](#media)
+  * [Wireframes](#wireframes)
+* [Technologies Used](#technologies-used)
+  * [Frameworks, Libraries & Programs Used] (#frameworks,-libraries,-&-programs-used)
+  * [Languages Used](#languages-used)
+  * [Stripe](#stripe)
+*  [Deployment and Local Development](#deployment-and-local-development)
+*  [Testing](#testing)
+*  [Credits](#credits)
+
 - - -
 ## User Experience
 
