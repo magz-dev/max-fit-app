@@ -6,7 +6,7 @@
 
 - - -
 
-## CONTENTS
+## Contents
 
 * [AUTOMATED TESTING](#automated-testing)
   * [W3C Validator](#w3c-validator)
