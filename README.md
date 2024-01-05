@@ -13,6 +13,7 @@
   * [Media](#media)
   * [Wireframes](#wireframes)
 * [Technologies Used](#technologies-used)
+  *  [Frameworks and Programs Used](#frameworks-and-programs-used)
   * [Languages Used](#languages-used)
   * [Stripe](#stripe)
 *  [Deployment and Local Development](#deployment-and-local-development)
@@ -78,7 +79,7 @@ Google Fonts was used for the following fonts:
 
 ## Technologies Used
 
-### Frameworks, Libraries & Programs Used
+### Frameworks and Programs Used
 * Bootstrap 4.6 - The framework for the website. Additional CSS styling was also implemented in style.css.
 * Git -  For version control.
 * GitHub -  To save and store the files for the website.
