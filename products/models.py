@@ -5,7 +5,8 @@ from django.core.exceptions import ValidationError
 
 # Create your models here.
 
-class Category(models.Model): 
+
+class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
         
@@ -19,11 +20,11 @@ class Category(models.Model):
         return self.friendly_name
 
 
-class Product(models.Model): 
+class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=False, on_delete=models.SET_NULL)
     name = models.CharField(max_length=50, null=True, blank=False)
     description = models.TextField(max_length=500, null=True, blank=True)
-    has_sizes =  models.BooleanField(default=False, null=True, blank=True)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=False)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=False)
     image_url = models.URLField(max_length=500, null=True, blank=True)

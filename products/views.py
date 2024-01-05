@@ -4,15 +4,15 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category, UserProfile, Review 
+from .models import Product, Category, UserProfile, Review
 from .forms import ProductForm, ReviewForm
 
 
 # Create your views here.
 
 def all_products(request):
-    """ 
-    View to show all products, including sorting and search queries 
+    """
+    View to show all products, including sorting and search queries
     """
     products = Product.objects.all()
     query = None
@@ -66,8 +66,8 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ 
-    View to show individual product details 
+    """
+    View to show individual product details
     """
     product = get_object_or_404(Product, pk=product_id)
     review_form = ReviewForm()
@@ -82,8 +82,8 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ 
-    Add a product to the store 
+    """
+    Add a product to the store
     """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -108,8 +108,8 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ 
-    Edit a product in the store 
+    """
+    Edit a product in the store
     """
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -137,11 +137,11 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ 
-    Delete a product from the store 
+    """
+    Delete a product from the store
     """
     product = get_object_or_404(Product, pk=product_id)
-    product_name = product.name 
+    product_name = product.name
     product.delete()
     messages.success(request, f'{product_name} deleted')
     return redirect(reverse('products'))

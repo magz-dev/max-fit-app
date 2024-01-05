@@ -4,13 +4,14 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 from bag.models import Coupon
 
+
 def bag_contents(request):
     coupon_id = request.session.get('coupon_id', int())
     bag_items = []
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
-    coupon_amount = 0 
+    coupon_amount = 0
 
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
@@ -52,9 +53,9 @@ def bag_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+ 
     grand_total = delivery + total
-    
+
     context = {
         'bag_items': bag_items,
         'total': total,

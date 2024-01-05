@@ -9,8 +9,6 @@ from products.models import Product
 from .forms import FormCoupon
 
 
-
-
 def view_bag(request):
     """ A view that renders the bag contents page """
 
@@ -128,6 +126,7 @@ def remove_from_bag(request, item_id):
         messages.error(request, f'Error removing item: {e}')
         return HttpResponse(status=500)
 
+
 @login_required
 @require_http_methods(["GET", "POST"])
 def coupon_apply(request):
@@ -169,8 +168,7 @@ def coupons_manage(request):
             return redirect('coupons_manage')
     else:
         coupon_form = FormCoupon()
-
-    
+        
     coupons = Coupon.objects.all()
     context = {
         'coupons': coupons,
@@ -200,4 +198,5 @@ def coupon_delete_confirmation(request, coupon_id):
         messages.success(request, 'Coupon deleted successfully!')
         return redirect('coupons_manage')
 
-    return render(request, 'bag/coupon_delete_confirmation.html', {'coupon': coupon})
+    return render
+    (request, 'bag/coupon_delete_confirmation.html', {'coupon': coupon})

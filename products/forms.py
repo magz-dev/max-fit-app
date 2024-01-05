@@ -3,6 +3,7 @@ from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Category, Review
 
+
 # Create a form for handling Product model data
 class ProductForm(forms.ModelForm):
     # Meta class to specify the model and fields for the form
@@ -11,7 +12,7 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
     
     image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
-    # Constructor to initialize the form with additional customizations
+    
     def __init__(self, *args, **kwargs):
         # Call the parent class constructor
         super().__init__(*args, **kwargs)
@@ -34,5 +35,6 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields =  ('review_text',)
+        fields = ('review_text',)
+
      

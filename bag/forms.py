@@ -40,3 +40,4 @@ class FormCoupon(forms.ModelForm):
         if amount < 1:
             raise forms.ValidationError("Amount cannot be less than 1")
         return amount
+        
