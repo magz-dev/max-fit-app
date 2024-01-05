@@ -162,7 +162,7 @@ User can read product description, see ratings and reviews added by verified use
 -  I want to be able to edit my shopping bag.
 -  I want to know what I will be charged for delivery.
    
-User can add multiple items, update the shopping bag and see if there is any delivery charge.
+User can add multiple items, edit and update the shopping bag as well as see if there is any delivery charge.
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/87cd190b-66a1-4233-8bce-7e17de6b91b3)
 
