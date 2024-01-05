@@ -155,9 +155,7 @@ User can add multiple items, update the shopping bag and see if there is any del
 
 -  I want to be able to apply a discount code to my shopping bag.
 
-![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/046620ac-f81f-4d55-9006-e8747295dab2)
-
-![Screenshot 2024-01-05 034411](https://github.com/magz-dev/sport-style-hub/assets/97630146/6490346c-4c15-45fd-a1e6-57c10d829ff0)
+![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/9b6dcbb2-18b5-49dd-93c2-8ebfd1dccefc)
 
 - - -
 
