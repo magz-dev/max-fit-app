@@ -2,7 +2,22 @@
 
 ![Screenshot 2024-01-04 212742](https://github.com/magz-dev/sport-style-hub/assets/97630146/70007219-2843-4070-8816-9797db235191)
 
+[View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
+
+- - -
+
+## CONTENTS
+
+* [AUTOMATED TESTING](#automated-testing)
+  * [W3C Validator](#w3c-validator)
+  * [Python](#python)
+  * [Lighthouse](#lighthouse)
+* [MANUAL TESTING](#manual-testing)
+  * [Testing User Stories](#testing-user-stories)
+
 Testing was ongoing throughout the entire build. During development I made use of Googles Developer Tools to ensure everything was working as expected and to assist me with troubleshooting when things didn't work as they should.
+
+- - -
 
 ## Automated Testing
 
