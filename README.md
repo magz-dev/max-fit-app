@@ -2,7 +2,7 @@
 
 The Sports Style Hub project is an E-Commerce website where passion meets performance. It is a fully responsive functional website intended to dedicate the pursuit of excellence in fitness, sports-wear, and leisure, to curate a collection of high-performance sportswear that empowers the user to achieve their fitness goals in a stylish way.  
 
-[View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
+[View the live project here](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
 ![image](https://github.com/magz-dev/sport-style-hub/assets/97630146/71824cdd-c0d1-4e4f-b78e-cb2b736b8119)
 
