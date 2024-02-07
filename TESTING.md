@@ -2,7 +2,7 @@
 
 ![Screenshot 2024-01-04 212742](https://github.com/magz-dev/sport-style-hub/assets/97630146/70007219-2843-4070-8816-9797db235191)
 
-[View the life project here.](https://sportstylehub-73c15c72aa03.herokuapp.com/)
+[View the live project here](https://sportstylehub-73c15c72aa03.herokuapp.com/)
 
 - - -
 
